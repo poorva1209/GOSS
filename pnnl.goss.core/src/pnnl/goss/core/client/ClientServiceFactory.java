@@ -35,7 +35,15 @@ public class ClientServiceFactory implements ClientFactory {
     	this.properties.put(GossCoreContants.PROP_OPENWIRE_URI, brokerToConnectTo);
     }
     
-    boolean exists(String value){
+    public String getOpenwireUri(String brokerToConnectTo){
+    	return this.properties.get(GossCoreContants.PROP_OPENWIRE_URI).toString();
+    }
+    
+    public Dictionary<String, Object> getProperties() {
+		return properties;
+	}
+
+	boolean exists(String value){
     	return !(value == null || value.isEmpty());
     }
     
